@@ -1,0 +1,94 @@
+{
+    "version": "v1",
+    "application": "otg",
+    "service_url":"https://vend-x.com/",
+    "document": [
+      {
+        "id": "po_line_item",
+        "label": "PO Line Item",
+        "rules_attributes": [
+          {
+            "id": "cateory",
+            "label": "Cateory",
+            "condition_type": "in",
+            "visible": true,
+            "value":[{
+              "id":"cat1",
+              "name":"Category1"
+            }, {
+              "id":"cat2",
+              "name":"Category2"
+            }, {
+              "id":"cat3",
+              "name":"Category3"
+            }, {
+              "id":"cat4",
+              "name":"Category4"
+            }]
+          },
+          {
+            "id": "plant",
+            "label": "Plant",
+            "condition_type": "in",
+            "visible": true
+          },
+          {
+            "id": "pp_bags_type",
+            "label": "PP Bages Type",
+            "condition_type": "in",
+            "visible": true
+          },
+          {
+            "id": "material_group",
+            "label": "Material Group",
+            "condition_type": "equal",
+            "visible": true
+          },
+          {
+            "id": "po_doc_type",
+            "label": "PO Doc Type",
+            "condition_type": "equal",
+            "visible": true
+          },
+          {
+            "id": "account",
+            "label": "Account",
+            "condition_type": "equal",
+            "visible": false
+          }
+        ]
+      },
+      {
+        "id": "bac",
+        "label": "asd",
+        "rules_attributes": [
+          {
+            "id": "cateory",
+            "label": "Cateory",
+            "condition_type": "in",
+            "visible": true,
+            "value":[{
+              "id":"cat1",
+              "name":"Category1"
+            }, {
+              "id":"cat4",
+              "name":"Category4"
+            }]
+          },
+          {
+            "id": "plant",
+            "label": "Plant",
+            "condition_type": "in",
+            "visible": true
+          },
+          {
+            "id": "pp_bags_type",
+            "label": "PP Bages Type",
+            "condition_type": "in",
+            "visible": true
+          }
+          
+        ]
+      }
+    ]
+  }
