@@ -1,10 +1,11 @@
 import React from 'react'
 
-import { ExampleComponent } from 'custom-react-form'
+import HelperLibrary from 'custom-react-form'
 import 'custom-react-form/dist/index.css'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  const HelperForm = new HelperLibrary();
+  return <div>{HelperForm.draw({NewData:[],ApproverData:[]})}</div>
 }
 
 export default App

@@ -1,0 +1,207 @@
+[
+    {
+        "id": 62,
+        "meta": {
+            "name": "JAY_test",
+            "description": "this workflow can implemented on PPbags for testing",
+            "status": "active",
+            "created_by": "1",
+            "updated_by": "2",
+            "created_datetime": "2023/01/18 05:16:59",
+            "updated_datetime": "2023/02/13 10:03:21"
+        },
+        "service": {
+            "api-key": "XPKAHV3wYe",
+            "client": "vendx.ppbags",
+            "document": "ppbags.doc123"
+        },
+        "rules": [
+            {
+                "value": "ppbags_type_1",
+                "condition": "equal_to",
+                "attribute_id": "ppbags_type"
+            },
+            {
+                "value": [
+                    "plastic",
+                    "paper",
+                    "rabber"
+                ],
+                "condition": "in",
+                "attribute_id": "material_group"
+            }
+        ],
+        "level": {
+            "steps": [
+                {
+                    "step_sequence_no": 997,
+                    "step_name": "step1",
+                    "conditions": [
+                        {
+                            "value": [
+                                "userid1",
+                                "userid2"
+                            ],
+                            "condition": "in",
+                            "attribute_id": "user_ids"
+                        }
+                    ]
+                },
+                {
+                    "step_sequence_no": 998,
+                    "step_name": "step2",
+                    "conditions": [
+                        {
+                            "value": [
+                                "userid3",
+                                "userid4"
+                            ],
+                            "condition": "in",
+                            "attribute_id": "user_ids"
+                        }
+                    ]
+                },
+                {
+                    "step_sequence_no": 999,
+                    "step_name": "step3",
+                    "conditions": [
+                        {
+                            "value": [
+                                "userid5",
+                                "userid6"
+                            ],
+                            "condition": "in",
+                            "attribute_id": "user_ids"
+                        }
+                    ]
+                },
+                {
+                    "step_sequence_no": 1000,
+                    "step_name": "step4",
+                    "conditions": [
+                        {
+                            "value": [
+                                "userid7",
+                                "userid8"
+                            ],
+                            "condition": "in",
+                            "attribute_id": "user_ids"
+                        }
+                    ]
+                },
+                {
+                    "step_sequence_no": 1001,
+                    "step_name": "step5",
+                    "conditions": [
+                        {
+                            "value": [
+                                "userid9",
+                                "userid10"
+                            ],
+                            "condition": "in",
+                            "attribute_id": "user_ids"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "id": 66,
+        "meta": {
+            "name": "JAY_test",
+            "description": "this workflow can implemented on PPbags for testing",
+            "status": "active",
+            "created_by": "1",
+            "updated_by": "66",
+            "created_datetime": "2023/02/06 05:08:39",
+            "updated_datetime": "2023/02/06 05:43:02"
+        },
+        "service": {
+            "api-key": "XPKAHV3wYe",
+            "client": "vendx.ppbags",
+            "document": "ppbags.doc123"
+        },
+        "rules": [
+            {
+                "value": "afasdf",
+                "condition": "in",
+                "attribute_id": "plant"
+            },
+            {
+                "value": "ppbags_type_1",
+                "condition": "equal_to",
+                "attribute_id": "ppbags_type"
+            },
+            {
+                "value": [
+                    "plastic",
+                    "paper",
+                    "rabber"
+                ],
+                "condition": "in",
+                "attribute_id": "material_group"
+            }
+        ],
+        "level": {
+            "steps": [
+                {
+                    "step_sequence_no": 2785,
+                    "step_name": "step1",
+                    "conditions": [
+                        {
+                            "value": [
+                                "userid1",
+                                "userid2"
+                            ],
+                            "condition": "in",
+                            "attribute_id": "user_ids"
+                        }
+                    ]
+                },
+                {
+                    "step_sequence_no": 2786,
+                    "step_name": "step2",
+                    "conditions": [
+                        {
+                            "value": [
+                                "userid3",
+                                "userid4"
+                            ],
+                            "condition": "in",
+                            "attribute_id": "user_ids"
+                        }
+                    ]
+                },
+                {
+                    "step_sequence_no": 2787,
+                    "step_name": "step3",
+                    "conditions": [
+                        {
+                            "value": [
+                                "userid5",
+                                "userid6"
+                            ],
+                            "condition": "in",
+                            "attribute_id": "user_ids"
+                        }
+                    ]
+                },
+                {
+                    "step_sequence_no": 2788,
+                    "step_name": "step4",
+                    "conditions": [
+                        {
+                            "value": [
+                                "userid7",
+                                "userid8"
+                            ],
+                            "condition": "in",
+                            "attribute_id": "user_ids"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

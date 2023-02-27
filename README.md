@@ -13,16 +13,23 @@ npm install --save custom-react-form
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import HelperLibrary from 'custom-react-workflow';
+import React, { useEffect } from 'react'
 
-import MyComponent from 'custom-react-form'
-import 'custom-react-form/dist/index.css'
-
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+function Example() {
+    const HelperForm = new HelperLibrary(NewData,"vendex");
+    let htmlElementId = "new";
+    useEffect(() => {
+      if(htmlElementId){
+        HelperForm.draw({NewData,ApproverData},htmlElementId)
+      }
+    }, [htmlElementId])
+  return (
+    <div id="new"></div>     
+  )
 }
+
+export default Example
 ```
 
 ## License
