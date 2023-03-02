@@ -5,8 +5,6 @@ import {Add as AddIcon} from '@mui/icons-material';
 import { styled } from '@mui/material/styles';
 import {FormatSize} from '../src/theme/SvgIcon/SvgIcon';
 import RenderWorkflowLevels from './WorkFlowLevelNew';
-import NewData from './sdkconfig.json'
-import ApproverData from './approverList.json'
 
 const PageToolbar = styled('div')(({theme}) => ({   
   background: '#ffffff',
@@ -59,7 +57,8 @@ const ExpandMore = styled((props) => {
     }),
   }));
 
-function WorkFlow() {
+const WorkFlow = React.forwardRef((props,ref) => {
+    const {NewData,ApproverData,handleDocumentChange} = props
     const [open, setOpen] = React.useState(true);
     const [documentOptions, setDocumentOptions] = React.useState([]);
     const [docSelected, setDocSelected] = React.useState({});
@@ -67,9 +66,23 @@ function WorkFlow() {
     const [docRulesFields, setDocRulesFields] = React.useState([])
     const [jsxRulesFields, setJsxRulesFields] = React.useState([])
 
+    React.useImperativeHandle(ref, () => ({
+      valueSetter(ruleId,ruleValue){
+        let tempDocSelected = docSelected;
+        if(tempDocSelected && tempDocSelected.rules_attributes) {
+            tempDocSelected.rules_attributes.map((element, i) => {
+               if(element.id===ruleId ){
+                element.value=ruleValue;
+               }
+            })}
+        setDocSelected(tempDocSelected)
+       }
+      }));
+
     React.useEffect(() => {
         setDocumentOptions(NewData.document)
         setDocSelected(NewData.document[0])
+        // handleDocumentChange(NewData.document[0]) 1
         // getFields(docSelected)
     },[])
     React.useEffect(() => {
@@ -78,6 +91,7 @@ function WorkFlow() {
     React.useEffect(() => {
             // console.log('in timeout...........docSelected changed',docSelected, docRulesFields, jsxRulesFields)
             getFields(docSelected)
+            // handleDocumentChange(docSelected) 2
     }, [docSelected])
     React.useEffect(() => {
         docRulesFields.map((element,i) => {
@@ -139,7 +153,8 @@ function WorkFlow() {
                             "optionList" : element.value ? element?.value : []
                         }
                     ])
-            });            
+            });         
+            handleDocumentChange(docSelected)   
             // console.log('set -- jsxrulesfield',docSelected, docRulesFields, jsxRulesFields)
 
         } else {setDocRulesFields([])}
@@ -358,6 +373,7 @@ function WorkFlow() {
                                                 value={docSelected}
                                                 onChange={(e, val) => {
                                                     setDocSelected(val)
+                                                    // handleDocumentChange(val)
                                                     // getFields()
                                                 }}
                                                 getOptionLabel={(option) => option.label ? option?.label : ''}
@@ -496,6 +512,7 @@ function WorkFlow() {
                                             // setVisible = {setVisible}
                                             selectedApproverList = {selectedApproverList}
                                             setSelectedApproverList = {setSelectedApproverList}
+                                            ApproverData={ApproverData}
                                             // currentLevel = {currentLevel}
                                             // setCurrentLevel = {setCurrentLevel}
                                             // handleClick = {handleClick}
@@ -537,6 +554,6 @@ function WorkFlow() {
             </main> 
         </React.Fragment>
     );
-};
+});
 
 export default WorkFlow;

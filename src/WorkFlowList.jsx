@@ -15,7 +15,7 @@ import {
 } from '@mui/x-data-grid-pro';
 import WorkflowTabs from './WorkflowListTabs.js';
 import { Add, MoreVert, Remove } from '@mui/icons-material';
-import WorkflowData from "./workflowlist.json";
+// import WorkflowData from "./workflowlist.json";
 // console.log('WorkflowData', WorkflowData)
   const PageToolbar = styled('div')(({theme}) => ({   
     background: '#ffffff',
@@ -199,8 +199,9 @@ import WorkflowData from "./workflowlist.json";
         return <Remove className="icon" />;
     }
     
-    function WorkFlowList() {
-    const rows = WorkflowData
+    function WorkFlowList(props) {
+      const rows = props.WorkflowData
+      //  const rows = WorkflowData
     const getDetailPanelContent = React.useCallback(
       ({ row }) => <DetailPanelContent row={row} />,
       [],

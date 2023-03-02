@@ -8,18 +8,19 @@ import theme from "./theme/theme";
 import WorkFlow from "./Workflow";
 
 export default class HelperLibrary {
-  constructor(sdk_config_file = {}, client = "vendex") {
+  constructor(sdk_config_file, client = "vendex") {
     this.sdk_config_file = sdk_config_file;
     this.client = client;
+    
   }
 
-  draw(props, htmlElementId = null) {
+  draw(props,ref, htmlElementId = null) {
     const componentEle = (
       <ThemeProvider theme={theme}>
         <div>
           <CssBaseline>
             {AppMainStyle}
-            <WorkFlow {...props} />
+            <WorkFlow {...props} ref={ref}  NewData={this.sdk_config_file} />
           </CssBaseline>
         </div>
       </ThemeProvider>

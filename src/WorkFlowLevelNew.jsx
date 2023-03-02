@@ -2,7 +2,6 @@ import React from "react";
 import { Box, Container, Card, CardHeader, CardActions, CardContent, TextField, Divider, Switch, Typography, Autocomplete, List, ListItem, ListItemText, IconButton, Tooltip, Button, ListItemAvatar, ListItemButton, Avatar, Stack, Popover, Checkbox, Chip, Collapse } from '@mui/material';
 import {DragIndicator as DragIndicatorIcon,RemoveCircle as RemoveCircleIcon,ExpandMore as ExpandMoreIcon,Edit as EditIcon,Add as AddIcon,Delete as DeleteIcon} from '@mui/icons-material';
 import { styled } from '@mui/material/styles';
-import ApproverData from './approverList.json'
 import _ from "lodash"
 
 
@@ -29,6 +28,7 @@ const RenderWorkflowLevels = ({
     // allSelectedUsers,
     // setAllSelectedUsers,
     // getPopoverData
+    ApproverData
 }) => {
     const editLevelFieldRef = React.useRef()
     const [levelNameVal, setLevelNameVal] = React.useState(`Level ${levelEl.level}`)
